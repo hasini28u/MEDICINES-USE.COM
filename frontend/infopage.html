@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Information.com</title>
+    <style>
+      body{
+        margin: 0px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
+        background-image: url('images/info-bg.jpg');
+        background-size: cover;
+        word-wrap: break-word;
+      }
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      h1{
+        text-align: center;
+        margin-top: 30px;
+      }
+      .container{
+        float: left;
+        height: 400px;
+        width: 22%;
+        border: solid 3px rgb(11, 131, 149);
+        border-radius: 8px;
+        margin: 50px 30px;
+        padding: 6px;
+        margin-left: 100px;
+        overflow: hidden; /* Prevents overflow outside the box */
+      }
+      .heading{
+        text-align: center;
+        padding-top: 25px;
+        font-size: 24px;
+        color: whitesmoke;
+        height: 70px;
+        width: 100%;
+      }
+      .info{
+        font-size: 18px;
+        padding: 6px;
+        height: 280px;
+        width: 100%;
+        color: rgb(16, 108, 9);
+        overflow-y: auto; /* Allows scrolling within the container if text exceeds */
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      window.onload = function() {
+        const medicine = JSON.parse(localStorage.getItem('selectedMedicine'));
+        if (medicine) {
+          document.getElementById('medicineName').textContent = medicine.name;
+          document.getElementById('usesInfo').textContent = medicine.use;
+          document.getElementById('dosageInfo').textContent = medicine.dosage;
+          document.getElementById('sideEffectsInfo').textContent = medicine.sideEffects || 'No known side effects';
+        } else {
+          alert('No medicine data found.');
+        }
+      }
+    </script>
+    <h1 id="medicineName">MEDICINE_NAME</h1>
+    <div class="container">
+      <div class="heading">USES</div>
+      <div class="info" id="usesInfo">
+        <p>It is used for</p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="heading">DOSAGE</div>
+      <div class="info" id="dosageInfo">
+        <p>Dose is</p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="heading">SIDE EFFECTS</div>
+      <div class="info" id="sideEffectsInfo">
+        <p>Its side-effects are as follows</p>
+      </div>
+    </div>
+  </body>
+</html>

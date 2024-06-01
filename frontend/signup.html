@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Signup</title>
+    <style>
+      *{
+        box-sizing: border-box;
+        padding:0;
+        margin:0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+      body{
+        background-image: url('images/signup-bg.png');
+        background-size: cover;
+      }
+      .container{
+        border:2px solid rgb(20, 161, 216);
+        border-radius: 5px;
+        width:350px;
+        height:450px;
+        margin-left:200px;
+        margin-right:800px;
+        margin-top:100px;
+        padding: 30px 20px;
+      }
+      h1{
+        color:rgb(20, 161, 216);
+        padding-left:50px;
+        margin-bottom:20px;
+      }
+      .box{
+        padding:10px;
+        margin:8px 10px;
+        width: 280px;
+        height: 30px;
+        border:1px solid grey;
+        border-radius: 20px;
+      }
+      .box::placeholder{
+        padding-left: 5px;
+        font-size: 15px;
+      }
+      .smallbox{
+        margin:12px 30px;
+      }
+      .check{
+        margin-right:8px;
+        margin-bottom: 10px;
+      }
+      .sign{
+        margin:20px 10px;
+        text-decoration: none;
+        padding:5px 110px;
+        border:1px solid rgb(20, 161, 216);
+        border-radius: 20px;
+        background-color: rgb(20, 161, 216);
+        color:white;
+        font-size: 18px;
+      }
+      a{
+        text-decoration: underline;
+      }
+      p{
+        display: inline-block;
+        margin-top:10px;
+        margin-left:60px;
+        margin-bottom: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form>
+        <h1>Sign Up Now</h1>
+        <input class="box" type="text" placeholder="First Name" required="required">
+        <input class="box" type="text" placeholder="Last Name"  required="required">
+        <input class="box" type="email" placeholder="Your email" required="required">
+        <input class="box" type="password" placeholder="Your password" minlength="8" title="Password must contain 8+ characters" required="required">
+        <div class="smallbox"><input class="check"  type="checkbox" required="required"><label class="checktext">I agree to the terms of services</label></div> 
+        <button class="sign" type="submit" formaction="http://127.0.0.1:5500/frontpage.html">SignUp</button>
+      </form>
+    </div>
+  </body>
+</html>
